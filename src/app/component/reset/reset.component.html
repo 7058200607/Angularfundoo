@@ -1,0 +1,40 @@
+<div class="main">
+    <form>
+        <div class="form-content">
+            <img class="googleimage" src="../../../assets/download.png" alt="">
+            <span class="form-title">Change Password</span>
+            <span class="form-heading">
+                Create a strong password
+            </span>
+            <span class="info">
+                Create a new, strong password that you don't use for other websites
+            </span>
+            <div class="name-section">
+                <div class="name">
+                    <mat-form-field class="mat-outline" appearance="outline">
+                        <mat-label>Create password*</mat-label>
+                        <input matInput placeholder="passward">
+                        <mat-error>password is required</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field class="mat-outline" appearance="outline">
+                        <mat-label>Confirm*</mat-label>
+                        <input matInput placeholder="confirm">
+                        <mat-error>confirm password is required</mat-error>
+                    <mat-hint>At least 8 characters</mat-hint>
+                    </mat-form-field>
+                </div>
+            </div>
+            <section>
+                <mat-checkbox>Show password</mat-checkbox>
+              </section>
+              <div class="btn">
+                <div>
+                    <button mat-button color="primary" routerLink="/forgot-password">Skip</button>
+                </div>
+                <div>
+                    <button mat-raised-button color="primary" onclick="">Save password</button>
+                </div>
+            </div>
+        </div>
+    </form>

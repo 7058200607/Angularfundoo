@@ -10,6 +10,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import { SignupComponent } from './component/signup/signup.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ResetComponent } from './component/reset/reset.component';
+import { ForgotComponent } from './component/forgot/forgot.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -18,7 +22,9 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     AppComponent,
     
     LoginComponent,
-         SignupComponent
+         SignupComponent,
+         ResetComponent,
+         ForgotComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +32,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule,BrowserAnimationsModule,FormsModule,MatCheckboxModule
+    MatButtonModule,BrowserAnimationsModule,FormsModule,MatCheckboxModule, MatSnackBarModule,HttpClientModule 
 
   ],
   providers: [],

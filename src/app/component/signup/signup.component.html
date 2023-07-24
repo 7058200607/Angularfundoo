@@ -1,5 +1,5 @@
 <div class="main">
-  <form [formGroup]="signupform">
+  <form [formGroup]="signupform" >
     <div class="firstsection">
       <div>
         <img class="googleimage" src="../../../assets/download.png" alt="">
@@ -33,32 +33,29 @@
         <div class="name">
           <mat-form-field class="mat-outline" appearance="outline">
             <mat-label>password*</mat-label>
-            <input matInput formControlName="passward" type="password" [type]="showpassword ? 'text':'password'"
-              placeholder="passward">
+            <input matInput type="password" formControlName="password" [type]="showPassword ? 'text' : 'password'" placeholder="passward">
             <mat-error>password is required</mat-error>
           </mat-form-field>
 
           <mat-form-field class="mat-outline" appearance="outline">
             <mat-label>Confirm*</mat-label>
-            <input matInput formControlName="confirmpassword" type="password" [type]="showpassword ? 'text':'password'"
-              placeholder="confirm">
+            <input matInput type="password" formControlName="confirmpassword" [type]="showPassword ? 'text' : 'password'" placeholder="confirm">
             <mat-error>confirm password is required</mat-error>
           </mat-form-field>
         </div>
         <mat-hint>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
       </div>
       <section>
-        <mat-checkbox (click)="showpasswords($event)">Show password</mat-checkbox>
+        <mat-checkbox (click)="showHidePassword($event)" >Show password</mat-checkbox>
       </section>
       <div class="nextbutton">
-        <button mat-button color="primary">sing in instead</button>
-        <button mat-raised-button color="primary">Next</button>
+        <button mat-button color="primary" routerLink="/login">sing in instead</button>
+        <button mat-raised-button color="primary" (click)="signup()">Next</button>
       </div>
     </div>
     <div class="secondsection">
       <img class="image"  src="https://ssl.gstatic.com/accounts/signup/glif/account.svg" alt="image">
       <span style="margin-top: 10px;">One account. All of google working for you </span>
     </div>
-
   </form>
 </div>

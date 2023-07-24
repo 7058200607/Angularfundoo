@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/userservices/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,22 +10,55 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./signup.component.scss']
 })
 export class SignupComponent {
-  signupform!:FormGroup
-  showpassword:boolean=false
-  constructor(private formBuilder:FormBuilder){}
+  signupform!: FormGroup;
+  submitted = false;
+  showPassword: boolean = false;
+  constructor(private formBuilder: FormBuilder, private snackBar: MatSnackBar, private userService: UserService, private router: Router) { }
 
-  ngOnInit(){
-  this.signupform=this.formBuilder.group({
-    firstname:["",Validators.required],
-    lastname:["",Validators.required],
-    email:["",Validators.required],
-    passward:["",Validators.required],
-    confirmpassword:["",Validators.required]
-  })
+  ngOnInit() {
+    this.signupform = this.formBuilder.group({
+      firstname: ['', [Validators.required, Validators.pattern("[a-zA-Z]*")]],
+      lastname: ['', [Validators.required, Validators.pattern("[a-zA-Z]*")]],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(8)]],
+      confirmpassword: ['', [Validators.required, Validators.minLength(8)]],
+    });
   }
-  showpasswords(event:any){
-    this.showpassword=!this.showpassword
+  showHidePassword(e: any) {
+    this.showPassword = e.target.checked;
   }
-  
+  signup() {
+    if (this.signupform.value.confirmpassword === this.signupform.value.password) {
+      if (this.signupform.valid) {
+        let reqSignup = {
+          firstName: this.signupform.value.firstname,
+          lastName: this.signupform.value.lastname,
+          service: "advance",
+          email: this.signupform.value.email,
+          password: this.signupform.value.password,
+        }
+        console.log("signup data:", reqSignup);
+        this.userService.signupService(reqSignup).subscribe((result: any) => {
+          console.log("data sucessfully added", result);
+          this.router.navigateByUrl("")
+          this.snackBar.open('Account created Successfully!', '', {
+            duration: 2000
+          });
+        })
+      }
+      else {
+        console.log("invalid data");
+        this.snackBar.open('SignUp failed!', '', {
+          duration: 1000
+        });
+      }
+    }
+    else {
+      console.log('error:both passwords are not same!');
+      this.snackBar.open("The passwords didn't match. Try again!", '', {
+        duration: 2000
+      });
+    }
+  }
 }
 
