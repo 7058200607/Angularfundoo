@@ -14,6 +14,7 @@ import { ResetComponent } from './component/reset/reset.component';
 import { ForgotComponent } from './component/forgot/forgot.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './component/dashboard/dashboard.component';
 
 
 
@@ -24,7 +25,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
          SignupComponent,
          ResetComponent,
-         ForgotComponent
+         ForgotComponent,
+         DashboardComponent
   ],
   imports: [
     BrowserModule,
