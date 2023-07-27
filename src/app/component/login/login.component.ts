@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userservices/user.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { UserService } from 'src/app/services/userservices/user.service';
 })
 export class LoginComponent {
 loginform!:FormGroup
-constructor(private formBuilder: FormBuilder,private snackBar: MatSnackBar,private userService:UserService){}
+constructor(private formBuilder: FormBuilder,private snackBar: MatSnackBar,private userService:UserService,private route:Router){}
 ngOnInit() {
   this.loginform = this.formBuilder.group({
     email: ['', [Validators.required, Validators.email]],
@@ -31,6 +32,7 @@ login() {
         duration: 2000 
       });
       localStorage.setItem('token', result.id);
+      this.route.navigateByUrl("/dashboard")
    
     })
   }

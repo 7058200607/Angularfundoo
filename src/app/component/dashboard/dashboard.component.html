@@ -1,1 +1,100 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+    <mat-toolbar color="white" class="example-toolbar">
+      <div class="firstdiv">
+        <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
+<div class="logo">
+    <div style="display: flex;height: 40px;width: 40px;align-items: center;">
+        <img src="../../../assets/keep_2020q4_48dp.png" alt="">
+        <h1 class="example-app-name">Fundoo</h1>
+    </div>
+    
+  </div>
+    
+  
+</div>
+<div  class="searchbox">
+    <input mat-input type="search" class="searchtextbox" placeholder="search">
+</div>
 
+        
+        <div class="seconddiv">
+            <div>
+                <button mat-icon-button>
+                    <mat-icon >
+                        refresh
+                    </mat-icon>
+                </button>
+              
+                <button mat-icon-button>
+                    <mat-icon >
+                        view_agenda
+                    </mat-icon>
+                </button>
+                
+                <button mat-icon-button>
+                    <mat-icon >
+                        settings
+                    </mat-icon>
+                </button>
+           
+            </div>
+            <div class="end_icon">
+                <button mat-icon-button>
+                    <mat-icon >
+                        apps
+                    </mat-icon>
+                </button>
+                
+                <button mat-icon-button>
+                    <mat-icon >
+                        account_circle
+                    </mat-icon>
+                </button>
+            </div>
+        </div>
+    </mat-toolbar>
+
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+        <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+            fixedTopGap="56">
+            <mat-nav-list>
+                <button mat-button class="button">
+                    <div class="icons">
+                        <img class="image" src="../../../assets/lightbulb_FILL0_wght0_GRAD0_opszNaN.svg" alt="">
+                        <div routerLink=".">Notes</div>
+                    </div>
+                </button>
+                <button mat-button class="button">
+                    <div class="icons">
+                        <img class="image" src="../../../assets/notifications_black_24dp.svg" alt="">
+                        <div routerLink=".">remainders</div>
+                    </div>
+                </button>
+                <button mat-button class="button">
+                    <div class="icons">
+                        <img class="image" src="../../../assets/edit_black_24dp.svg" alt="">
+                        <div routerLink=".">Edit labels</div>
+                    </div>
+
+                </button>
+                <button mat-button class="button">
+                    <div class="icons">
+                        <img class="image" src="../../../assets/archive_black_24dp.svg" alt="">
+                        <div routerLink=".">archive</div>
+                    </div>
+                </button>
+                <button mat-button class="button">
+                    <div class="icons">
+                        <img class="image" src="../../../assets/delete_FILL0_wght0_GRAD0_opszNaN.svg" alt="">
+                        <div routerLink=".">Trash</div>
+                    </div>
+                </button>
+
+            </mat-nav-list>
+        </mat-sidenav>
+
+        <mat-sidenav-content>
+            <p *ngFor="let content of fillerContent">{{content}}</p>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+</div>

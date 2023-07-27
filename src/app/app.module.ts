@@ -15,6 +15,10 @@ import { ForgotComponent } from './component/forgot/forgot.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
 
 
 
@@ -34,7 +38,8 @@ import { DashboardComponent } from './component/dashboard/dashboard.component';
     MatFormFieldModule,
     ReactiveFormsModule,
     MatInputModule,
-    MatButtonModule,BrowserAnimationsModule,FormsModule,MatCheckboxModule, MatSnackBarModule,HttpClientModule 
+    MatButtonModule,BrowserAnimationsModule,FormsModule,MatCheckboxModule, MatSnackBarModule,
+    HttpClientModule,MatSidenavModule,MatToolbarModule,MatIconModule ,MatListModule
 
   ],
   providers: [],
