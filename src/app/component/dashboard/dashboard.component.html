@@ -94,7 +94,9 @@
         </mat-sidenav>
 
         <mat-sidenav-content>
-            <p *ngFor="let content of fillerContent">{{content}}</p>
+                <div class="child-route">
+                    <router-outlet></router-outlet>
+                </div> 
         </mat-sidenav-content>
     </mat-sidenav-container>
 </div>

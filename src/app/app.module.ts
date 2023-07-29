@@ -19,7 +19,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
-
+import { CreatenoteComponent } from './component/createnote/createnote.component';
+import { NoteiconComponent } from './component/noteicon/noteicon/noteicon.component';
 
 
 @NgModule({
@@ -30,7 +31,9 @@ import {MatListModule} from '@angular/material/list';
          SignupComponent,
          ResetComponent,
          ForgotComponent,
-         DashboardComponent
+         DashboardComponent,
+         CreatenoteComponent,
+         NoteiconComponent
   ],
   imports: [
     BrowserModule,
