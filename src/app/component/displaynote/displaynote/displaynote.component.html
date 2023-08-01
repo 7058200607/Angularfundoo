@@ -1,0 +1,21 @@
+
+<div class="MainDisplayNotesContainer">
+    
+    <div *ngFor="let notes of childData" >
+        <div class="NotesContainer">
+            
+            <div class="TitleInput">
+                {{notes.title}}
+            </div>
+
+            <div class="DescriptionInput" >
+                {{notes.description}}
+            </div>
+
+            <div class="BottomIconsContainer">
+                <app-noteicon [noteinfo]="notes"></app-noteicon>
+            </div>
+        </div>
+    </div>
+
+</div>

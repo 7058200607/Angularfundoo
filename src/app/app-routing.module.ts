@@ -4,6 +4,7 @@ import { LoginComponent } from './component/login/login.component';
 import { SignupComponent } from './component/signup/signup.component';
 import { DashboardComponent } from './component/dashboard/dashboard.component';
 import { CreatenoteComponent } from './component/createnote/createnote.component';
+import { GetallnotesComponent } from './component/getallnotes/getallnotes/getallnotes.component';
 
 const routes: Routes = [
   {
@@ -12,8 +13,8 @@ const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"signup",component:SignupComponent},
   {path:"dashboard",component:DashboardComponent,children
-:[{path:"createnote",component:CreatenoteComponent},{
-  path:"",pathMatch:"full",redirectTo:"createnote"
+:[{path:"getallnotes",component:GetallnotesComponent},{
+  path:"",pathMatch:"full",redirectTo:"getallnotes"
 }]},
 
 ];

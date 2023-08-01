@@ -11,6 +11,7 @@ import { NoteservicesService } from 'src/app/services/noteservices/noteservices.
 export class CreatenoteComponent {
   firstView : boolean=true;
   NotesinData!:FormGroup;
+  @Output() message =new EventEmitter();
   constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar, private noteServices:NoteservicesService){
     
   }
@@ -40,6 +41,8 @@ export class CreatenoteComponent {
           this.firstView = true;
          
           this.NotesinData.reset();
+        
+          this.message.emit();
           
         },
         (error:any) => {

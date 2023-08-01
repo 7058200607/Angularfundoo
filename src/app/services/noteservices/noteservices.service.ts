@@ -19,4 +19,16 @@ export class NoteservicesService {
     }
     return this.httpService.postService('notes/addNotes', reqdata, true, httpHeadersOption)
   }
+  getallNotes(){
+    this.token=localStorage.getItem('token');
+    let httpHeadersOption = {
+      headers : new HttpHeaders({ 
+        contentType : 'application/json',
+        authorization : this.token
+      })
+    }
+
+    return this.httpService.getService('notes/getNotesList', true, httpHeadersOption)
+  }
+
 }

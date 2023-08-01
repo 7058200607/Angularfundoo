@@ -21,6 +21,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { CreatenoteComponent } from './component/createnote/createnote.component';
 import { NoteiconComponent } from './component/noteicon/noteicon/noteicon.component';
+import { DisplaynoteComponent } from './component/displaynote/displaynote/displaynote.component';
+import { GetallnotesComponent } from './component/getallnotes/getallnotes/getallnotes.component';
 
 
 @NgModule({
@@ -33,7 +35,9 @@ import { NoteiconComponent } from './component/noteicon/noteicon/noteicon.compon
          ForgotComponent,
          DashboardComponent,
          CreatenoteComponent,
-         NoteiconComponent
+         NoteiconComponent,
+         DisplaynoteComponent,
+         GetallnotesComponent
   ],
   imports: [
     BrowserModule,
